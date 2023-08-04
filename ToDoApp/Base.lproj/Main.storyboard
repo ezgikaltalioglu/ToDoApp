@@ -16,20 +16,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URV-Ef-2kA">
-                                <rect key="frame" x="162" y="408.66666666666669" width="69" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Detay"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NvR-P8-OY0">
+                                <rect key="frame" x="0.0" y="155" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="butonDetay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y1u-gK-BXJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3Z7-1K-Bj1"/>
                                 </connections>
-                            </button>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-ag-bF0">
+                                <rect key="frame" x="0.0" y="211" width="393" height="607"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notHucre" id="DyB-Oc-jUY" customClass="NotHucre" customModule="ToDoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DyB-Oc-jUY" id="Zkd-Md-gWg">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="MCK-Mu-MVp">
+                                                    <rect key="frame" x="36" y="38" width="48" height="24"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp7-mc-vxr">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MCK-Mu-MVp" firstAttribute="centerY" secondItem="Zkd-Md-gWg" secondAttribute="centerY" id="ncd-Kc-bKA"/>
+                                                <constraint firstItem="MCK-Mu-MVp" firstAttribute="leading" secondItem="Zkd-Md-gWg" secondAttribute="leadingMargin" constant="16" id="wlr-A8-8Ld"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelNot" destination="pp7-mc-vxr" id="Tfo-KO-aZV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="URV-Ef-2kA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6vJ-yv-jhs"/>
-                            <constraint firstItem="URV-Ef-2kA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9US-ms-jQX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dqO-ag-bF0" secondAttribute="trailing" id="8kE-88-WBR"/>
+                            <constraint firstItem="dqO-ag-bF0" firstAttribute="top" secondItem="NvR-P8-OY0" secondAttribute="bottom" id="CWF-ij-Tsd"/>
+                            <constraint firstItem="dqO-ag-bF0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T90-oT-kPN"/>
+                            <constraint firstItem="NvR-P8-OY0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UCe-yW-LRx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dqO-ag-bF0" secondAttribute="bottom" id="UiY-LP-0Ha"/>
+                            <constraint firstItem="NvR-P8-OY0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d2A-p2-yZY"/>
+                            <constraint firstItem="NvR-P8-OY0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vi7-kN-aRK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Yapılacaklar Listesi" id="0Na-HL-KvS">
@@ -40,6 +78,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="notTableView" destination="dqO-ag-bF0" id="Kmh-zx-stm"/>
+                        <outlet property="searchBar" destination="NvR-P8-OY0" id="vJy-pK-y1u"/>
                         <segue destination="zkf-Wj-9qg" kind="show" identifier="toDetay" id="npi-3t-jAY"/>
                     </connections>
                 </viewController>
@@ -65,7 +105,7 @@
                                     <action selector="butonKaydet:" destination="ALc-LY-tfZ" eventType="touchUpInside" id="9Wr-5C-svg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kategori" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seD-Vd-ulk">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notunuzu Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seD-Vd-ulk">
                                 <rect key="frame" x="50" y="283.33333333333331" width="293" height="45.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -108,7 +148,7 @@
                                     <action selector="butonGuncelle:" destination="zkf-Wj-9qg" eventType="touchUpInside" id="byj-ZD-9wL"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kategori" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ho-P3-uhv">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notunuzu Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ho-P3-uhv">
                                 <rect key="frame" x="50" y="283.33333333333331" width="293" height="45.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -139,7 +179,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xGn-C4-JGy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2mx-Pl-Jvw">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -16,6 +16,7 @@
 		F488990C2A786CE3008AC11F /* Yeninot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F488990B2A786CE3008AC11F /* Yeninot.swift */; };
 		F488990E2A786CF3008AC11F /* Noticerigi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F488990D2A786CF3008AC11F /* Noticerigi.swift */; };
 		F48899102A78738A008AC11F /* Not.swift in Sources */ = {isa = PBXBuildFile; fileRef = F488990F2A78738A008AC11F /* Not.swift */; };
+		F4C019962A7DA763006527EB /* NotHucre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C019952A7DA763006527EB /* NotHucre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F488990B2A786CE3008AC11F /* Yeninot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yeninot.swift; sourceTree = "<group>"; };
 		F488990D2A786CF3008AC11F /* Noticerigi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noticerigi.swift; sourceTree = "<group>"; };
 		F488990F2A78738A008AC11F /* Not.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Not.swift; sourceTree = "<group>"; };
+		F4C019952A7DA763006527EB /* NotHucre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotHucre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		F48899082A786C4B008AC11F /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				F4C019942A7DA744006527EB /* tableView */,
 				F48899092A786C56008AC11F /* views */,
 			);
 			path = ui;
@@ -106,6 +109,14 @@
 				F488990F2A78738A008AC11F /* Not.swift */,
 			);
 			path = entitiy;
+			sourceTree = "<group>";
+		};
+		F4C019942A7DA744006527EB /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				F4C019952A7DA763006527EB /* NotHucre.swift */,
+			);
+			path = tableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				F48899102A78738A008AC11F /* Not.swift in Sources */,
 				F48898F42A786BC6008AC11F /* AppDelegate.swift in Sources */,
 				F488990E2A786CF3008AC11F /* Noticerigi.swift in Sources */,
+				F4C019962A7DA763006527EB /* NotHucre.swift in Sources */,
 				F48898F62A786BC6008AC11F /* SceneDelegate.swift in Sources */,
 				F488990C2A786CE3008AC11F /* Yeninot.swift in Sources */,
 			);
