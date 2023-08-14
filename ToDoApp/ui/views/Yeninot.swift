@@ -12,6 +12,8 @@ class Yeninot: UIViewController {
     
     @IBOutlet weak var tfNot: UITextField!
     
+    var viewmodel = YeninotViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,16 +23,12 @@ class Yeninot: UIViewController {
     
 
     @IBAction func butonKaydet(_ sender: Any) {
-        
         if let nk = tfNot.text{
-         
-            kaydet(not_kategori: nk)
+            viewmodel.kaydet(not_kategori: nk)
         }
     }
     
-    func kaydet(not_kategori:String){
-        
-        print("Not Kaydet: \(not_kategori)")
-    }
+  
+    
 
 }

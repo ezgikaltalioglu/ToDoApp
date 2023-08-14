@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40883782A89A4280099AC2F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F40883772A89A4280099AC2F /* RxSwift */; };
+		F408837B2A89A5FF0099AC2F /* TodoDaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408837A2A89A5FF0099AC2F /* TodoDaoRepository.swift */; };
+		F408837E2A89A6570099AC2F /* AnasayfaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408837D2A89A6570099AC2F /* AnasayfaViewModel.swift */; };
+		F40883802A89A6720099AC2F /* YeninotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408837F2A89A6720099AC2F /* YeninotViewModel.swift */; };
+		F40883822A89A68D0099AC2F /* NoticerigiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40883812A89A68D0099AC2F /* NoticerigiViewModel.swift */; };
 		F48898F42A786BC6008AC11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48898F32A786BC6008AC11F /* AppDelegate.swift */; };
 		F48898F62A786BC6008AC11F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48898F52A786BC6008AC11F /* SceneDelegate.swift */; };
 		F48898F82A786BC6008AC11F /* Anasayfa.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48898F72A786BC6008AC11F /* Anasayfa.swift */; };
@@ -20,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F408837A2A89A5FF0099AC2F /* TodoDaoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDaoRepository.swift; sourceTree = "<group>"; };
+		F408837D2A89A6570099AC2F /* AnasayfaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnasayfaViewModel.swift; sourceTree = "<group>"; };
+		F408837F2A89A6720099AC2F /* YeninotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeninotViewModel.swift; sourceTree = "<group>"; };
+		F40883812A89A68D0099AC2F /* NoticerigiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticerigiViewModel.swift; sourceTree = "<group>"; };
 		F48898F02A786BC6008AC11F /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48898F32A786BC6008AC11F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F48898F52A786BC6008AC11F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,12 +48,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40883782A89A4280099AC2F /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F40883792A89A5CC0099AC2F /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				F408837A2A89A5FF0099AC2F /* TodoDaoRepository.swift */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		F408837C2A89A63A0099AC2F /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				F408837D2A89A6570099AC2F /* AnasayfaViewModel.swift */,
+				F408837F2A89A6720099AC2F /* YeninotViewModel.swift */,
+				F40883812A89A68D0099AC2F /* NoticerigiViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
 		F48898E72A786BC6008AC11F = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +107,7 @@
 		F48899072A786C19008AC11F /* data */ = {
 			isa = PBXGroup;
 			children = (
+				F40883792A89A5CC0099AC2F /* repo */,
 				F488990A2A786C5E008AC11F /* entitiy */,
 			);
 			path = data;
@@ -87,6 +116,7 @@
 		F48899082A786C4B008AC11F /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				F408837C2A89A63A0099AC2F /* viewmodel */,
 				F4C019942A7DA744006527EB /* tableView */,
 				F48899092A786C56008AC11F /* views */,
 			);
@@ -135,6 +165,9 @@
 			dependencies = (
 			);
 			name = ToDoApp;
+			packageProductDependencies = (
+				F40883772A89A4280099AC2F /* RxSwift */,
+			);
 			productName = ToDoApp;
 			productReference = F48898F02A786BC6008AC11F /* ToDoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +196,9 @@
 				Base,
 			);
 			mainGroup = F48898E72A786BC6008AC11F;
+			packageReferences = (
+				F40883762A89A4280099AC2F /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = F48898F12A786BC6008AC11F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,7 +230,11 @@
 				F48899102A78738A008AC11F /* Not.swift in Sources */,
 				F48898F42A786BC6008AC11F /* AppDelegate.swift in Sources */,
 				F488990E2A786CF3008AC11F /* Noticerigi.swift in Sources */,
+				F408837B2A89A5FF0099AC2F /* TodoDaoRepository.swift in Sources */,
+				F408837E2A89A6570099AC2F /* AnasayfaViewModel.swift in Sources */,
 				F4C019962A7DA763006527EB /* NotHucre.swift in Sources */,
+				F40883822A89A68D0099AC2F /* NoticerigiViewModel.swift in Sources */,
+				F40883802A89A6720099AC2F /* YeninotViewModel.swift in Sources */,
 				F48898F62A786BC6008AC11F /* SceneDelegate.swift in Sources */,
 				F488990C2A786CE3008AC11F /* Yeninot.swift in Sources */,
 			);
@@ -414,6 +454,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F40883762A89A4280099AC2F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F40883772A89A4280099AC2F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F40883762A89A4280099AC2F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F48898E82A786BC6008AC11F /* Project object */;
 }

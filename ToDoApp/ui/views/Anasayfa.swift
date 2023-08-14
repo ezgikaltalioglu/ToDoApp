@@ -14,6 +14,7 @@ class Anasayfa: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var notlarListesi = [Not]()
+    var viewmodel = AnasayfaViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,17 @@ class Anasayfa: UIViewController {
         notTableView.dataSource = self
         notTableView.delegate = self
         
-        let n1 = Not(not_id: 1, not_ad: "Ödev Yap")
-        let n2 = Not(not_id: 2, not_ad: "Yemek Yap")
-        let n3 = Not(not_id: 3, not_ad: "Doktor Randevusu")
-        notlarListesi.append(n1)
-        notlarListesi.append(n2)
-        notlarListesi.append(n3)
+        _ = viewmodel.notlarListesi.subscribe(onNext: { liste in
+            self.notlarListesi = liste
+            self.notTableView.reloadData() //liste değişti yeniden yükle
+        })
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) { //sayfa her göründüğünde
+        viewmodel.notlariYukle()
+    }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -47,7 +52,7 @@ class Anasayfa: UIViewController {
 extension Anasayfa: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Not Ara: \(searchText)")
+        viewmodel.arama(aramaKelimesi: searchText)
     }
 }
 
@@ -95,7 +100,7 @@ extension Anasayfa: UITableViewDelegate, UITableViewDataSource{
             
             let evetAction = UIAlertAction(title: "Evet", style: .destructive){ action in
                 
-                print("Notu Sil: \(not.not_id!)")
+                self.viewmodel.sil(not_id: not.not_id!)
             }
             alert.addAction(evetAction)
             

@@ -11,6 +11,8 @@ class Noticerigi: UIViewController {
     
     @IBOutlet weak var tfNot: UITextField!
     
+    var viewmodel = NoticerigiViewModel()
+    
     var not:Not?
     
     override func viewDidLoad() {
@@ -25,12 +27,9 @@ class Noticerigi: UIViewController {
         
         if let nk = tfNot.text, let n = not{
          
-            guncelle(not_id: n.not_id!, not_kategori: nk)
+            viewmodel.guncelle(not_id: n.not_id!, not_kategori: nk)
         }
     }
     
-    func guncelle(not_id: Int, not_kategori: String){
-        print("Not Güncelle: \(not_id) - \(not_kategori)")
-    }
     
 }
